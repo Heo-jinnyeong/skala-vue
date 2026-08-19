@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # skala-vue
 =======
 ## 과제 1: Weather Mockup
