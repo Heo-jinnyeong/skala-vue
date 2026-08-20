@@ -6,6 +6,10 @@ const weatherList = ref([
   { id: 'city_01', name: '서울', temp: 28, status: '맑음' },
   { id: 'city_02', name: '수원', temp: 24, status: '비' },
   { id: 'city_03', name: '부산', temp: 26, status: '구름' },
+
+  // 추가한 데이터
+  { id: 'city_04', name: '광주', temp: 23, status: '바람' },
+  { id: 'city_05', name: '대구', temp: 31, status: '폭염' },
 ])
 
 // 2. [1일차 데이터] 검색어 및 알림창 제어용 데이터
@@ -24,6 +28,22 @@ const filteredWeatherList = computed(() => {
 
   // 검색어가 포함된 도시만 칼같이 필터링하여 실시간으로 뱉어냅니다.
   return weatherList.value.filter((item) => item.name.includes(query))
+})
+
+const showHotCitiesOnly = ref(false)
+
+const displayedWeatherList = computed(() => {
+  if (showHotCitiesOnly.value) {
+    return filteredWeatherList.value.filter((item) => item.temp >= 25)
+  }
+
+  return filteredWeatherList.value
+})
+
+watch(showHotCitiesOnly, (isEnabled) => {
+  console.log(
+    `🔥 [watch 감지] 25도 이상인 도시만 보기: ${isEnabled ? '활성화' : '비활성화'}`,
+  )
 })
 
 // 4. [2일차 추가] watch를 활용한 선택 도시 추적 센서
@@ -52,12 +72,17 @@ const showDetail = (cityName, status) => {
       <p>
         검색 중인 도시: <strong>{{ searchQuery }}</strong>
       </p>
+
+      <label>
+        <input type="checkbox" v-model="showHotCitiesOnly" />
+        25도 이상인 도시만 보기
+      </label>
     </section>
 
     <section class="list-box">
       <h3>🏙️ 지역별 날씨 현황</h3>
 
-      <div v-for="item in filteredWeatherList" :key="item.id" class="weather-card" @click="selectedCityInfo = `${item.name}이 선택되었습니다.`">
+      <div v-for="item in displayedWeatherList" :key="item.id" class="weather-card" @click="selectedCityInfo = `${item.name}이 선택되었습니다.`">
         <h4>{{ item.name }} ({{ item.status }})</h4>
         <p>현재 기온: {{ item.temp }}°C</p>
 
@@ -67,7 +92,9 @@ const showDetail = (cityName, status) => {
         <button class="btn-detail" @click.stop="showDetail(item.name, item.status)">상세보기</button>
       </div>
 
-      <p v-if="filteredWeatherList.length === 0" style="text-align: center; color: #e74c3c; padding: 10px 0">😭 검색 결과와 일치하는 도시가 없습니다.</p>
+      <p v-if="displayedWeatherList.length === 0" style="text-align: center; color: #e74c3c; padding: 10px 0">
+  😭 검색 결과와 일치하는 도시가 없습니다.
+      </p>
     </section>
 
     <div class="status-bar">
