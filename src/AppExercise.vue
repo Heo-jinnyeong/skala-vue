@@ -2,48 +2,58 @@
 import WeatherMockup from './components/weather/WeatherMockup.vue'
 import WeatherComposition from './components/weather/WeatherComposition.vue';
 import WeatherParent from './components/weather/WeatherParent.vue';
+import UnitToggler from './components/weather/UnitToggler.vue';
 
 </script>
 
 <template>
-  <div class="assignment-container">
-    <div class="assignment-card">
-      <h1>⛅ 과제 1: 날씨 (Mockup)</h1>
-      <hr />
-      <WeatherMockup />
-    </div>
-
-    <div class="assignment-card">
-      <h1>⛅ 과제 2: 날씨 (Composition)</h1>
-      <hr />
-      <WeatherComposition />
-    </div>
-
-    <div class="assignment-card">
-      <h1>⛅ 과제 3: 날씨 (Component)</h1>
-      <hr />
-      <WeatherParent />
-    </div>
-
-    <div class="assignment-card">
-      <h1>⛅ 과제 4: 날씨 (Router)</h1>
-      <hr />
-      <div class="dashboard-wrapper">
-        <nav class="navigation-bar">
-          <RouterLink to="/" class="nav-item">날씨 대시보드</RouterLink>
-          <span class="divider">|</span>
-          <RouterLink to="/about" class="nav-item">서비스 소개</RouterLink>
-        </nav>
-        <main>
-          <RouterView />
-          <!-- RouterView v-slot="{ Component }">
-            <KeepAlive>
-              <component :is="Component" />
-            </KeepAlive>
+  <div class="app-container">
+    <h1>⛅ 과제 1: 날씨 (Mockup)</h1>
+    <hr />
+    <WeatherMockup />
+  </div>
+  <div class="app-container">
+    <h1>⛅ 과제 2: 날씨 (컴포지션)</h1>
+    <hr />
+    <WeatherComposition />
+  </div>
+  <div class="app-container">
+    <h1>⛅ 과제 3: 날씨 (컴포넌트)</h1>
+    <hr />
+    <WeatherParent />
+  </div>
+  <div class="app-container">
+    <h1>⛅ 과제 4: 라우터적용</h1>
+    <hr />
+    <div class="dashboard-wrapper">
+      <nav class="navigation-bar">
+        <RouterLink to="/" class="nav-item">🌦️ 날씨 대시보드</RouterLink>
+        <span class="divider">|</span>
+        <RouterLink to="/about" class="nav-item">ℹ️ 서비스 소개</RouterLink>
+      </nav>
+      <main>
+        <RouterView />
+        <!-- RouterView v-slot="{ Component }">
+          <KeepAlive>
+            <component :is="Component" />
+          </KeepAlive>
         </RouterView-->
-        </main>
-      </div>
-
+      </main>
+    </div>
+  </div>
+  <div class="app-container">
+    <h1>⛅ 과제 5: 스토어적용</h1>
+    <hr />
+    <div class="dashboard-wrapper">
+      <nav class="navigation-bar">
+        <RouterLink to="/" class="nav-item">🌦️ 날씨 대시보드</RouterLink>
+        <span class="divider">|</span>
+        <RouterLink to="/about" class="nav-item">ℹ️ 서비스 소개</RouterLink>
+        <UnitToggler />
+      </nav>
+      <main>
+        <RouterView />
+      </main>
     </div>
   </div>
 </template>

@@ -21,3 +21,7 @@ Vue Composition API의 `ref`, `computed`, `watch`, `watchEffect`를 활용해 �
 ## 과제 4: Weather Router
 
 추가 Task TODO
+
+## 과제 5: Weather Store
+
+추가 Task TODO
