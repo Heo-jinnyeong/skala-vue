@@ -33,3 +33,11 @@ Axios와 OpenWeatherMap API를 활용해 서울, 수원, 부산, 광주, 대구�
 ### 추가 기능
 
 OpenWeatherMap에서 받은 도시의 위도·경도를 활용해 Open-Meteo 대기질 API를 추가로 연동했습니다. `AirQualityCard` 컴포넌트에서 PM10, PM2.5, US AQI 수치와 AQI 구간에 따른 대기질 상태를 표시하도록 구성했습니다.
+
+## 과제 7: Weather UI Library
+
+Element Plus를 활용해 도시 선택, 날씨 조회, 현재 날씨, 예보와 대기질 정보를 Card, Select, Button, Table 등의 UI 컴포넌트로 표시했습니다.
+
+### 추가 기능
+
+OpenWeatherMap의 3시간 간격 날씨 예보 API와 Open-Meteo 대기질 API를 연동했습니다. 데이터 요청 중에는 로딩 화면을 표시하고, 요청에 실패하면 오류 메시지를 표시하도록 구성했습니다.

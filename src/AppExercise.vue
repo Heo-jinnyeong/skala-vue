@@ -3,6 +3,8 @@ import WeatherMockup from './components/weather/WeatherMockup.vue'
 import WeatherComposition from './components/weather/WeatherComposition.vue';
 import WeatherParent from './components/weather/WeatherParent.vue';
 import UnitToggler from './components/weather/UnitToggler.vue';
+import ElementPlusPractice from './components/ElementPlus.vue'
+import WeatherUiLibrary from './components/weather/WeatherUiLibrary.vue'
 
 </script>
 
@@ -79,7 +81,21 @@ import UnitToggler from './components/weather/UnitToggler.vue';
     </main>
     </div>
   </div>
+
+  <div class="app-container">
+  <h1>⛅ 실습: Element Plus 적용</h1>
+  <hr />
+
+  <ElementPlusPractice />
+  </div>
   
+  </div>
+
+  <div class="app-container">
+    <h1>⛅ 과제 7: Weather UI Library</h1>
+    <hr />
+
+    <WeatherUiLibrary />
   </div>
 </template>
 
