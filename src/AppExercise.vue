@@ -1,6 +1,7 @@
 <script setup>
 import WeatherMockup from './components/weather/WeatherMockup.vue'
 import WeatherComposition from './components/weather/WeatherComposition.vue';
+import WeatherParent from './components/weather/WeatherParent.vue';
 
 </script>
 
@@ -16,6 +17,12 @@ import WeatherComposition from './components/weather/WeatherComposition.vue';
       <h1>⛅ 과제 2: 날씨 (Composition)</h1>
       <hr />
       <WeatherComposition />
+    </div>
+
+    <div class="assignment-card">
+      <h1>⛅ 과제 3: 날씨 (Component)</h1>
+      <hr />
+      <WeatherParent />
     </div>
   </div>
 </template>

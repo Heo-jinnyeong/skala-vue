@@ -13,3 +13,6 @@ Vue Composition API의 `ref`, `computed`, `watch`, `watchEffect`를 활용해 �
 ### 추가 기능
 
 기본 도시 검색 기능 외에 25℃ 이상인 도시만 확인할 수 있는 필터 기능을 추가했습니다. `showHotCitiesOnly`를 반응형 상태로 관리하고, `displayedWeatherList`에서 검색 결과와 온도 조건을 함께 계산하도록 구성했습니다. 체크박스로 필터를 켜거나 끌 수 있으며, 설정이 변경될 때마다 `watch`를 통해 현재 활성화 상태가 콘솔에 출력됩니다.
+
+## 과제 3: Weather Component
+
