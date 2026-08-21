@@ -24,6 +24,27 @@ import WeatherParent from './components/weather/WeatherParent.vue';
       <hr />
       <WeatherParent />
     </div>
+
+    <div class="assignment-card">
+      <h1>⛅ 과제 4: 날씨 (Router)</h1>
+      <hr />
+      <div class="dashboard-wrapper">
+        <nav class="navigation-bar">
+          <RouterLink to="/" class="nav-item">날씨 대시보드</RouterLink>
+          <span class="divider">|</span>
+          <RouterLink to="/about" class="nav-item">서비스 소개</RouterLink>
+        </nav>
+        <main>
+          <RouterView />
+          <!-- RouterView v-slot="{ Component }">
+            <KeepAlive>
+              <component :is="Component" />
+            </KeepAlive>
+        </RouterView-->
+        </main>
+      </div>
+
+    </div>
   </div>
 </template>
 
