@@ -25,3 +25,11 @@ Vue Composition API의 `ref`, `computed`, `watch`, `watchEffect`를 활용해 �
 ## 과제 5: Weather Store
 
 추가 Task TODO
+
+## 과제 6: Weather Axios
+
+Axios와 OpenWeatherMap API를 활용해 서울, 수원, 부산, 광주, 대구의 실시간 날씨를 병렬로 조회하고, 온도·날씨·습도·풍속 정보를 메인과 상세 화면에 적용했습니다. 로딩 상태와 API 요청 실패도 별도로 처리했습니다.
+
+### 추가 기능
+
+OpenWeatherMap에서 받은 도시의 위도·경도를 활용해 Open-Meteo 대기질 API를 추가로 연동했습니다. `AirQualityCard` 컴포넌트에서 PM10, PM2.5, US AQI 수치와 AQI 구간에 따른 대기질 상태를 표시하도록 구성했습니다.

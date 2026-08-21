@@ -18,6 +18,16 @@ const routes = [
     component: () => import('../views/WeatherDetailView.vue'),
   },
   {
+    path: '/axios',
+    name: 'WeatherHomeAxios',
+    component: () => import('../components/weather/WeatherHomeViewAxios.vue'),
+  },
+  {
+    path: '/axios/weather/:cityId',
+    name: 'WeatherDetailAxios',
+    component: () => import('../components/weather/WeatherDetailViewAxios.vue'),
+  },
+  {
     path: '/:pathMatch(.*)*',
     name: 'NotFound',
     component: () => import('../views/NotFoundView.vue'),

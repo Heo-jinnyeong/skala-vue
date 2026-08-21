@@ -55,6 +55,31 @@ import UnitToggler from './components/weather/UnitToggler.vue';
         <RouterView />
       </main>
     </div>
+    <div class="app-container">
+  <h1>⛅ 과제 6: Axios API 적용</h1>
+  <hr />
+
+  <div class="dashboard-wrapper">
+    <nav class="navigation-bar">
+      <RouterLink to="/axios" class="nav-item">
+        🌦️ 실시간 날씨 대시보드
+      </RouterLink>
+
+      <span class="divider">|</span>
+
+      <RouterLink to="/about" class="nav-item">
+        ℹ️ 서비스 소개
+      </RouterLink>
+
+      <UnitToggler />
+    </nav>
+
+    <main>
+      <RouterView />
+    </main>
+    </div>
+  </div>
+  
   </div>
 </template>
 
